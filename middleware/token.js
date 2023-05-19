@@ -13,12 +13,13 @@ function verifyToken(req, res, next) {
   const token = bearer[1];
 
   req.token = token;
+  console.log("token===>>>", token);
 
-  if (!token) {
-    return res.json({
-      message: "Please provide valid token",
-    });
-  }
+  // if (!token) {
+  //   return res.json({
+  //     message: "Please provide valid token",
+  //   });
+  // }
 
   jwt.verify(req.token, "kaif", (err, authData) => {
     if (err) {

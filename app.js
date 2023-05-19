@@ -7,11 +7,13 @@ const port = process.env.PORT;
 const bodyParser = require("body-parser");
 const userRouter = require("./router/userRoute");
 const coinCodex = require("./router/userRoute")
+const mailRouter = require("./router/sendMailRouter")
 
 app.use("/public", express.static("public"));
 
 app.use("/user", userRouter);
 app.use("/coin",coinCodex)
+app.use("/mail",mailRouter)
 
 mongoose.set("strictQuery", true);
 mongoose

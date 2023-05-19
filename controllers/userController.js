@@ -67,6 +67,7 @@ const userDetails = async (req, res) => {
 };
 
 // soft delete in mongoose using node js
+
 const softDelete = async (req, res) => {
   const { id } = req.params.id;
   const result = await User.updateOne({ id }, { $set: { deleted: true } });
@@ -81,5 +82,5 @@ const softDelete = async (req, res) => {
 module.exports = {
   insertUser,
   userDetails,
-  softDelete,
+  softDelete, 
 };
